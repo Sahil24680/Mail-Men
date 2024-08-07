@@ -1,0 +1,114 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+
+.center{
+    text-align: center;
+    
+}
+
+
+
+
+ 
+.pfp {
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the entire container */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: transform 0.3s ease; /* Smoothens the hover effect */
+}
+
+.pfp:hover {
+    transform: scale(1.1); /* Increases size on hover */
+}
+/* search.css */
+/* Style for the replies section */
+/* search.css */
+
+/* Style for the replies section */
+.replies {
+    margin-top: 20px;
+}
+
+.replies h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Style for each reply box */
+.reply-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.reply-header {
+    margin-bottom: 5px;
+}
+
+.reply-body {
+    margin-top: 5px;
+}
+
+/* Style for the reply form */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Center align the h1 text */
+.center {
+  text-align: center;
+}
+.dropdown-menu {
+    position: absolute;
+    bottom: 100%; /* Position at the bottom of the dropdown toggle button */
+    left: 0;
+    width: 100%;
+    max-height: 300px; /* Adjust as needed */
+    overflow-y: auto; /* Enable scrolling if needed */
+    z-index: 1000; /* Ensure dropdown appears above other content */
+   
+}
+.dropdown{
+    margin-top: 250px;
+}
+

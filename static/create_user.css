@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+}
+
+.new_userlol {
+    max-width: 500px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.new_userlol h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.new_userlol input[type="text"],
+.new_userlol input[type="password"],
+.new_userlol input[type="text1"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+.new_userlol input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.new_userlol input[type="submit"]:hover {
+    background-color: #45a049;
+}
+

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'search.css' %}" rel="stylesheet">
+    {% include 'nav.html' %}
+</head>
+<body>
+    <div class="container">
+        <h1 class="center">
+            <p><strong>From:</strong> {{ email.sender }}</p>
+            <img class='pfp' src="{{ email.sender.pfp.url }}" alt="Profile Picture">
+        </h1>
+        <div class="email-detail">
+            <p><strong>Subject:</strong> {{ email.subject }}</p>
+            <hr>
+            <p><strong>Body:</strong> {{ email.body }}</p>
+            <hr>
+            <p class="sent"><strong>Sent:</strong> {{ email.timestamp_formatted }}</p>
+        </div>
+    </div>
+
+    <div class="replies">
+        <h2>Replies</h2>
+        {% for reply in replies %}
+        <div class="reply-box">
+            <div class="reply-header">
+                {% if user.email == reply.sender%}
+                <p>Sent by: you</p>       
+                {% else %}
+                <p>Sent by: {{ reply.sender }}</p>
+                {% endif %}
+                <hr>
+                <p><strong>Subject:</strong> {{ reply.subject }}</p>
+                <div class="reply-body">
+                    <p>{{ reply.body }}</p>
+                </div>
+                <hr>
+                <p>Sent at: {{ reply.timestamp}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Reply
+        </button>
+        <ul class="dropdown-menu p-4" aria-labelledby="dropdownMenuButton">
+            <li>
+                <form action="{% url 'send_reply' email_id=email.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject:</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="body" class="form-label">Body:</label>
+                        <textarea class="form-control" id="body" name="body" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Reply</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
